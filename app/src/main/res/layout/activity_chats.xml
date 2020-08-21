@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.chats.ChatsActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/Contact_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_ChatHead"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnkBackChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/colorPrimary"
+                    app:srcCompat="@drawable/ic_arrow_back" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/chatsUserImage"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/person_transperent" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Chat_tvContactName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="Mr Coder"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/Chat_tvLastSeen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="Last seen today at 11:50pm"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/btn_Chat_VideoCall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/colorPrimary"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_ChatHead"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout_ChatHead"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout_ChatHead"
+                        app:srcCompat="@drawable/ic_videocall" />
+
+                    <ImageButton
+                        android:id="@+id/btn_Chat_VoiceCall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:background="@color/colorPrimary"
+                        android:tint="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_ChatHead"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout_ChatHead"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout_ChatHead"
+                        app:srcCompat="@drawable/ic_call" />
+
+                    <ImageButton
+                        android:id="@+id/btn_Chat_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:background="@color/colorPrimary"
+                        android:tint="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_ChatHead"
+                        app:layout_constraintStart_toStartOf="@+id/linearLayout_ChatHead"
+                        app:layout_constraintTop_toTopOf="@+id/linearLayout_ChatHead"
+                        app:srcCompat="@drawable/ic_menu_more_vertical" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ChatsScreen_Recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Contact_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomConStraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/contact_layout_background"
+            app:layout_constraintBottom_toBottomOf="@+id/ChatsScreen_Recycler"
+            app:layout_constraintStart_toStartOf="@+id/ChatsScreen_Recycler">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/ivEmogi"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_emoji_emotions"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etTypeMessage"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:ems="10"
+                android:hint="Type a message"
+                android:inputType="textPersonName"
+                app:layout_constraintBottom_toBottomOf="@+id/ivEmogi"
+                app:layout_constraintStart_toEndOf="@+id/ivEmogi"
+                app:layout_constraintTop_toTopOf="@+id/ivEmogi" />
+
+            <ImageView
+                android:id="@+id/ivAttachment"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:tint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/etTypeMessage"
+                app:layout_constraintStart_toEndOf="@+id/etTypeMessage"
+                app:layout_constraintTop_toTopOf="@+id/etTypeMessage"
+                app:srcCompat="@drawable/attachment_light" />
+
+            <ImageView
+                android:id="@+id/ivCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivAttachment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivAttachment"
+                app:layout_constraintTop_toTopOf="@+id/ivAttachment"
+                app:srcCompat="@drawable/ic_camera" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/btnSend"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/green_background"
+            android:scaleType="center"
+            android:src="@drawable/ic_mic"
+            app:layout_constraintBottom_toBottomOf="@+id/bottomConStraint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bottomConStraint"
+            app:layout_constraintTop_toTopOf="@+id/bottomConStraint" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

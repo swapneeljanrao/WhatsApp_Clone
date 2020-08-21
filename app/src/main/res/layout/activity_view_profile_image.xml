@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        tools:context=".view.diaplay.ViewProfileImageActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ViewProfile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnkBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/ViewProfile_toolbar"
+                app:layout_constraintStart_toStartOf="@+id/ViewProfile_toolbar"
+                app:layout_constraintTop_toTopOf="@+id/ViewProfile_toolbar"
+                app:srcCompat="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:id="@+id/ViewProfile_tvProfilePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="Profile photo"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnkBack"
+                app:layout_constraintStart_toEndOf="@+id/btnkBack"
+                app:layout_constraintTop_toTopOf="@+id/btnkBack" />
+
+            <ImageButton
+                android:id="@+id/ViewProfile_edit_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:background="@android:color/black"
+                android:src="@drawable/ic_edit"
+                android:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/ViewProfile_SharePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/black"
+                android:src="@drawable/ic_share" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.jsibbold.zoomage.ZoomageView
+            android:id="@+id/viewProfile_ZoomView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="57dp"
+            android:scaleType="centerCrop"
+            android:transitionName="profile_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ViewProfile_toolbar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

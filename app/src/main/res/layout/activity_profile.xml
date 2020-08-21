@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.profile.ProfileActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#6811E3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Profile"
+            app:titleTextColor="@android:color/white">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/profileUserProfileImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/person_placeholder"
+            android:transitionName="profile_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarProfile" />
+
+        <ImageButton
+            android:id="@+id/pickPhoto"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/round_button"
+            android:padding="10dp"
+            android:src="@drawable/ic_camera"
+            android:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/profileUserProfileImage"
+            app:layout_constraintEnd_toEndOf="@+id/profileUserProfileImage" />
+
+        <View
+            android:id="@+id/profile_view1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileUserProfileImage" />
+
+        <ImageView
+            android:id="@+id/imageViewPersonName"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_view1"
+            app:srcCompat="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/profile_tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Name"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewEditName"
+            app:layout_constraintStart_toEndOf="@+id/imageViewPersonName"
+            app:layout_constraintTop_toTopOf="@+id/imageViewPersonName" />
+
+        <TextView
+            android:id="@+id/profileTvPersonName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="name"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/profile_tvName"
+            app:layout_constraintStart_toEndOf="@+id/imageViewPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/profile_tvName" />
+
+        <ImageView
+            android:id="@+id/imageViewEditName"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/profileTvPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profile_tvName"
+            app:srcCompat="@drawable/ic_edit" />
+
+        <TextView
+            android:id="@+id/tvPersonNameDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="This is not your username or pin.This name will be visible to your WhatsApp contacts."
+            app:layout_constraintEnd_toEndOf="@+id/imageViewEditName"
+            app:layout_constraintStart_toStartOf="@+id/profileTvPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/profileTvPersonName" />
+
+        <View
+            android:id="@+id/profile_view2"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvPersonNameDescription"
+            app:layout_constraintTop_toBottomOf="@+id/tvPersonNameDescription" />
+
+        <ImageView
+            android:id="@+id/imageViewAbout"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_view2"
+            app:srcCompat="@drawable/ic_info" />
+
+        <TextView
+            android:id="@+id/tvAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="About"
+            app:layout_constraintEnd_toStartOf="@+id/imageView_EditAbout"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAbout"
+            app:layout_constraintTop_toTopOf="@+id/imageViewAbout" />
+
+        <TextView
+            android:id="@+id/tvAboutContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Hey there's , i am using WhatsApp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvAbout"
+            app:layout_constraintStart_toEndOf="@+id/imageViewAbout"
+            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
+
+        <ImageView
+            android:id="@+id/imageView_EditAbout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAboutContent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAbout"
+            app:srcCompat="@drawable/ic_edit" />
+
+        <View
+            android:id="@+id/profile_view3"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvAboutContent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAboutContent" />
+
+        <ImageView
+            android:id="@+id/imageViewNumber"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_view3"
+            app:srcCompat="@drawable/ic_phone" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewNumber"
+            app:layout_constraintTop_toTopOf="@+id/imageViewNumber" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="+91 ### ### ####"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvPhone"
+            app:layout_constraintStart_toEndOf="@+id/imageViewNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+        <Button
+            android:id="@+id/btnSignOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Sign Out"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageViewNumber"
+            app:layout_constraintTop_toBottomOf="@+id/tvNumber" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

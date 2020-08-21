@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Chat App</string>
+    <string name="lets_chat">Let\'s Chat</string>
+    <string name="terms_conditions">Tap " Agree and Continue " to accept \nterms and conditions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
